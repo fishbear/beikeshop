@@ -17,6 +17,7 @@ return [
     'quantity'                 => '數量',
     'subtotal'                 => '小計',
     'product_total'            => '商品總計',
+    'customer_discount'        => '會員優惠',
     'order_total'              => '應付總金額',
     'shipping_fee'             => '運費',
     'all'                      => '全部',
