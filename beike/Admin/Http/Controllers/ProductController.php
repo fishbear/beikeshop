@@ -20,6 +20,9 @@ class ProductController extends Controller
     public function index(Request $request)
     {
         $requestData    = $request->all();
+        if (isset($requestData['order_by'])) {
+            list($requestData['sort'], $requestData['order']) = explode(':', $requestData['order_by']);
+        }
         $productList    = ProductRepo::list($requestData);
         $products       = ProductResource::collection($productList);
         $productsFormat =  $products->jsonSerialize();
