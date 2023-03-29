@@ -90,13 +90,20 @@
                   <th>{{ __('common.id') }}</th>
                   <th>{{ __('product.image') }}</th>
                   <th>{{ __('product.name') }}</th>
-                  <th>{{ __('product.price') }}</th>
                   <th>
                     <div class="d-flex align-items-center">
-                        {{ __('common.created_at') }}
+                        {{ __('product.price') }}
                       <div class="d-flex flex-column ml-1 order-by-wrap">
-                        <i class="el-icon-caret-top" @click="checkedOrderBy('created_at:asc')"></i>
-                        <i class="el-icon-caret-bottom" @click="checkedOrderBy('created_at:desc')"></i>
+                        <i class="el-icon-caret-top" @click="checkedOrderBy('product_skus.price:asc')"></i>
+                        <i class="el-icon-caret-bottom" @click="checkedOrderBy('product_skus.price:desc')"></i>
+                      </div>
+                    </div>
+                  <th>
+                    <div class="d-flex align-items-center">
+                        {{ __('common.updated_at') }}
+                      <div class="d-flex flex-column ml-1 order-by-wrap">
+                        <i class="el-icon-caret-top" @click="checkedOrderBy('updated_at:asc')"></i>
+                        <i class="el-icon-caret-bottom" @click="checkedOrderBy('updated_at:desc')"></i>
                       </div>
                     </div>
                   </th>
@@ -129,7 +136,7 @@
                     <a href="{{ $product['url'] }}" target="_blank" title="{{ $product['name'] }}" class="text-dark">{{ $product['name'] }}</a>
                   </td>
                   <td>{{ $product['price_formatted'] }}</td>
-                  <td>{{ $product['created_at'] }}</td>
+                  <td>{{ $product['updated_at'] }}</td>
                   <td>{{ $product['position'] }}</td>
                   @if ($type != 'trashed')
                     <td>
