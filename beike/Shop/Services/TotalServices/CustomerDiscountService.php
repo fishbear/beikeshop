@@ -31,9 +31,6 @@ class CustomerDiscountService
         if ($discountFactor <= 0) {
             return null;
         }
-        if ($discountFactor > 1) {
-            $discountFactor = 1;
-        }
         $amount       = $totalService->getSubTotal() * $discountFactor / 100;
 
         $totalData    = [
